@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Study Deadline Bot — Roadmap</title>
+    <style>
+      :root {
+        --bg: #fafaf8; --card: #ffffff; --ink: #1a1a18; --ink-2: #55554f; --ink-3: #8a8a82;
+        --line: rgba(0,0,0,0.09); --now: #09321f; --now-soft: rgba(9,50,31,0.08);
+        --next: #1d4d8f; --next-soft: rgba(29,77,143,0.08); --later: #6b6b63; --later-soft: rgba(107,107,99,0.08);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .page { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+      .eyebrow { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 6px; }
+      h1 { font-size: 26px; margin: 0 0 4px; }
+      .updated { color: var(--ink-3); font-size: 13px; margin: 0 0 36px; }
+      section { margin-bottom: 32px; }
+      .section-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+      .section-head h2 { font-size: 15px; margin: 0; }
+      .badge { font-size: 11px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; }
+      .badge.now { color: var(--now); background: var(--now-soft); }
+      .badge.next { color: var(--next); background: var(--next-soft); }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+      .now-card { border-left: 3px solid var(--now); }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .pill { display: inline-block; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 13.5px; color: var(--ink-2); }
+      .pill.next { border-color: var(--next-soft); }
+      .now-item { font-size: 15px; margin: 0 0 6px; color: var(--ink); }
+      footer { color: var(--ink-3); font-size: 12.5px; margin-top: 40px; }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <p class="eyebrow">Zero-to-Builder Kit · Roadmap</p>
+      <h1>Study Deadline Bot</h1>
+      <p class="updated">Last updated 2026-09-12</p>
+
+      <section>
+        <div class="section-head"><span class="badge now">Now — V1</span><h2>What you're building right now</h2></div>
+        <div class="card now-card">
+          <p class="now-item">A Discord bot that posts a reminder in the #study-group channel 24 hours before each assignment deadline, pulling dates from a simple shared list.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><span class="badge next">Next</span><h2>Parked for V2 / V3</h2></div>
+        <div class="pill-row">
+          <span class="pill next">Let group members add deadlines via a Discord command instead of editing the list by hand</span>
+          <span class="pill next">Reminders 1 week and 1 day out, not just 1 day</span>
+        </div>
+      </section>
+
+      <footer>Nothing here is discarded — just sequenced. This file updates as you build. Environment: Claude Code, on the user's own laptop. First-timer, prefers step-by-step explanations.</footer>
+    </div>
+  </body>
+</html>

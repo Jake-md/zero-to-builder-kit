@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{PROJECT_NAME}} — Roadmap</title>
+    <style>
+      /* Zero-to-Builder Kit roadmap. Scannable pills/categories, not prose.
+         Fill the slots and repeat the marked blocks; keep the structure and
+         theme handling as-is. Light theme by default, dark via
+         prefers-color-scheme. */
+      :root {
+        --bg: #fafaf8;
+        --card: #ffffff;
+        --ink: #1a1a18;
+        --ink-2: #55554f;
+        --ink-3: #8a8a82;
+        --line: rgba(0, 0, 0, 0.09);
+        --now: #09321f;
+        --now-soft: rgba(9, 50, 31, 0.08);
+        --next: #1d4d8f;
+        --next-soft: rgba(29, 77, 143, 0.08);
+        --later: #6b6b63;
+        --later-soft: rgba(107, 107, 99, 0.08);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121211;
+          --card: #1b1b1a;
+          --ink: #f0efe9;
+          --ink-2: #b5b4ac;
+          --ink-3: #7d7c74;
+          --line: rgba(255, 255, 255, 0.1);
+          --now: #73b490;
+          --now-soft: rgba(115, 180, 144, 0.12);
+          --next: #7fb0e8;
+          --next-soft: rgba(127, 176, 232, 0.12);
+          --later: #9c9b93;
+          --later-soft: rgba(156, 155, 147, 0.12);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.6 ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .page { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin: 0 0 6px;
+      }
+      h1 { font-size: 26px; margin: 0 0 4px; }
+      .updated { color: var(--ink-3); font-size: 13px; margin: 0 0 36px; }
+      section { margin-bottom: 32px; }
+      .section-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .section-head h2 { font-size: 15px; margin: 0; }
+      .badge {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: 999px;
+      }
+      .badge.now { color: var(--now); background: var(--now-soft); }
+      .badge.next { color: var(--next); background: var(--next-soft); }
+      .badge.later { color: var(--later); background: var(--later-soft); }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px 18px;
+      }
+      .now-card { border-left: 3px solid var(--now); }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .pill {
+        display: inline-block;
+        padding: 7px 13px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        font-size: 13.5px;
+        color: var(--ink-2);
+      }
+      .pill.next { border-color: var(--next-soft); }
+      .pill.later { border-color: var(--later-soft); }
+      .now-item { font-size: 15px; margin: 0 0 6px; color: var(--ink); }
+      .now-item:last-child { margin-bottom: 0; }
+      footer { color: var(--ink-3); font-size: 12.5px; margin-top: 40px; }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <p class="eyebrow">Zero-to-Builder Kit · Roadmap</p>
+      <h1>{{PROJECT_NAME}}</h1>
+      <p class="updated">Last updated {{LAST_UPDATED}}</p>
+
+      <section>
+        <div class="section-head">
+          <span class="badge now">Now — V1</span>
+          <h2>What you're building right now</h2>
+        </div>
+        <div class="card now-card">
+          <!-- Repeat .now-item per V1 item -->
+          <p class="now-item">{{NOW_ITEM}}</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="badge next">Next</span>
+          <h2>Parked for V2 / V3</h2>
+        </div>
+        <div class="pill-row">
+          <!-- Repeat .pill.next per parked item -->
+          <span class="pill next">{{NEXT_ITEM}}</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="badge later">Later</span>
+          <h2>Someday / loose ideas</h2>
+        </div>
+        <div class="pill-row">
+          <!-- Repeat .pill.later per loose idea -->
+          <span class="pill later">{{LATER_ITEM}}</span>
+        </div>
+      </section>
+
+      <footer>Nothing here is discarded — just sequenced. This file updates as you build.</footer>
+    </div>
+  </body>
+</html>

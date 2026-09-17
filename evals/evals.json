@@ -1,0 +1,71 @@
+{
+  "skill_name": "zero-to-builder-kit",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "hi, i've never written code before in my life but i really want to build something that automatically reminds my study group on discord about our assignment deadlines. i have no idea where to even start, like do i need to learn python or something? im so lost",
+      "expected_output": "Runs the opening interview (references/interview.md) as one conversational message covering all five questions, translates jargon plainly on first use, and does not jump straight into code or tool setup before the interview is done.",
+      "files": [],
+      "expectations": [
+        "The response asks about the user's working environment (plain chat vs Claude Code vs other)",
+        "The response asks what a first win / success looks like, tied to a timeframe",
+        "The response asks about prior building experience",
+        "The response asks about pace preference (fast vs step-by-step)",
+        "The response does not start writing code or setting up a project before gathering interview answers",
+        "Any technical term introduced (e.g. API, repo, bot) is defined in plain language inline",
+        "If Q3 (prior building experience) offers examples, they stay generic (e.g. 'a little automated task', 'a basic website') rather than naming specific tools/platforms (e.g. Zapier, IFTTT, a particular no-code app)"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "ok im back, ready to keep working on the discord bot thing",
+      "expected_output": "Recognizes the existing roadmap.html as evidence of a returning session, skips the opening interview entirely, briefly reminds the user where things stood, and goes straight into continuing the work.",
+      "files": ["evals/files/discord-bot-roadmap.html"],
+      "expectations": [
+        "The response does not re-ask the five opening interview questions",
+        "The response references specifics from the existing roadmap (project name and/or the current Now item)",
+        "The response moves toward continuing/building rather than re-onboarding"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "so I want to build a simple tool that scrapes prices off a shopping site and emails me when something drops below a certain price. I don't really know what an API or a repo is, please explain stuff as we go since I'm totally new to this. Also, totally separate thought -- could you explain how neural networks work in general? always been curious about that.",
+      "expected_output": "Defines API and repo in plain language at first use. Treats the neural-networks question as one-off curiosity, not sustained drift: answers it directly and warmly (or, if it checks in at all, does so with curiosity-affirming language), then returns to the build goal. Does not frame the tangent as a 'rabbit hole' to avoid or guard against.",
+      "files": [],
+      "expectations": [
+        "The term 'API' is defined in one plain sentence",
+        "The term 'repo' is defined in one plain sentence",
+        "The response answers the neural-networks tangent directly and warmly (or, if it briefly checks in, does so with curiosity-affirming language) rather than framing it as a rabbit hole to avoid or something that might 'happen by accident'",
+        "The response does not simply refuse or ignore the neural-networks tangent, and does not silently drop the original build goal either",
+        "If Q3 (prior building experience) offers examples, they stay generic (e.g. 'a little automated task', 'a basic website') rather than naming specific tools/platforms (e.g. Zapier, IFTTT, a particular no-code app)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "hey I gotta run, that's it for me today! we got the bot successfully posting a test reminder message into #study-group today, awesome. talk next time!",
+      "expected_output": "Recognizes the wind-down cue and performs the end-of-session debrief immediately: summarizes the session, updates the roadmap file, updates CLAUDE.md too (not just the roadmap), states the next step, and does not pressure the user to keep going since they said they're leaving.",
+      "files": ["evals/files/discord-bot-roadmap.html", "evals/files/discord-bot-claude.md"],
+      "expectations": [
+        "The response performs the end-of-session debrief immediately, without waiting for further prompting, recognizing the wind-down cue",
+        "The response summarizes in plain language what happened this session (the successful test reminder posting to #study-group)",
+        "The response updates or describes updating the roadmap file to reflect this session's progress",
+        "The response updates or describes updating CLAUDE.md (not just the roadmap file) to reflect this session's progress",
+        "The response states a natural next step for next time",
+        "The response does not pressure the user to keep going, since they explicitly said they need to leave"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "hey, I've built a couple small Flask apps before and used cron for scheduling before, nothing fancy. I want to build a little python script that pings a weather REST API every morning and texts me if rain's expected. Should be a pretty quick build I think.",
+      "expected_output": "Still runs the opening interview, but doesn't define terms (Flask, cron, REST API) the user already used correctly themselves, and treats them as already technical rather than over-explaining basics they've demonstrated familiarity with. Note: in practice this hasn't discriminated between skill versions -- both handled it correctly since the user's own word choice made their experience obvious.",
+      "files": [],
+      "expectations": [
+        "The response still runs the five-question opening interview (this is a first-time-for-this-project message, so Step 1 still applies)",
+        "The response does not define 'REST API' in plain language, since the user already used the term correctly themselves",
+        "The response does not define 'cron' / 'cron job' in plain language, for the same reason",
+        "The response does not define 'Flask' in plain language, for the same reason",
+        "The overall tone treats the user as already technical rather than over-explaining basics they've demonstrated familiarity with"
+      ]
+    }
+  ]
+}
