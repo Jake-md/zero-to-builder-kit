@@ -66,6 +66,21 @@
         "The response does not define 'Flask' in plain language, for the same reason",
         "The overall tone treats the user as already technical rather than over-explaining basics they've demonstrated familiarity with"
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "So could the bot also play music in voice chat or solve complex math equations?",
+      "expected_output": "Recognizes the existing roadmap.html/CLAUDE.md as a returning session (no re-interview), briefly reorients to the current V1 status, answers both feasibility questions honestly and in plain language, makes clear these are separate, unrelated builds rather than small add-ons to the current bot, does not start building either feature, frames parking them as 'yes, and' rather than a rejection, and offers to add them to the roadmap's Next/Later section before redirecting back to the current V1 work.",
+      "files": ["evals/files/discord-bot-roadmap.html", "evals/files/discord-bot-claude.md"],
+      "expectations": [
+        "The response does not re-ask the five opening interview questions",
+        "The response briefly reorients to the existing project (mentions the reminder bot and/or current V1 status) before addressing the question",
+        "The response explains, in plain language, how/why a Discord bot could play music in a voice channel",
+        "The response explains, in plain language, how/why a bot could solve math equations",
+        "The response makes clear both asks are separate, larger builds rather than small additions to the current V1 scope, and does not start building either one",
+        "The response frames parking these ideas as 'yes, and later' rather than a rejection or a flat 'no'",
+        "The response offers to add both ideas to the roadmap file's Next/Later section and redirects back to continuing the current V1 work without pressure"
+      ]
     }
   ]
 }
